@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t simple-app:${{ github.sha }} ./app
+
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/app.yaml
+          kubectl set image deployment/simple-app simple-app=simple-app:${{ github.sha }}
