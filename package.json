@@ -1,0 +1,25 @@
+{
+  "name": "simple-app",
+  "version": "1.0.0",
+  "description": "A modern containerized Node.js application with Docker and Kubernetes support",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "node app/app.js",
+    "dev": "nodemon app/app.js",
+    "test": "echo \"No tests configured yet\""
+  },
+  "keywords": [
+    "docker",
+    "kubernetes",
+    "nodejs",
+    "express"
+  ],
+  "author": "nareshbabub2004-prog",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
